@@ -1,5 +1,5 @@
 #include<windows.h>
-#include<string>
+#include<cstring>
 #include <iostream>
 #include<stdio.h>
 #define FILE_MENU_NEW 1
@@ -92,41 +92,55 @@ WPARAM wp,LPARAM lp){
                 DestroyWindow(hWnd);
             }
             break;
-            case FILE_MENU_NEW:
-                displaydialog(hWnd);
-                MessageBeep(MB_ICONINFORMATION);
-                break;
-            case GENERATE_BUTTON:
-                char name[100],age[100],out[200];
-                GetWindowTextA(hName,name,100);
-                GetWindowTextA(hAge,age,100);
-                if(strcmp(name,"")==0 || strcmp(age,"")==0){
-                    ival_msgbox= MessageBoxW(hWnd,L"pls enter stuff",NULL,MB_ABORTRETRYIGNORE);
-                    switch (ival_msgbox)
-                    {
-                    case IDABORT:
-                        DestroyWindow(hWnd);
-                        break;
-                    case IDRETRY:
-                    return 0;
-                    break;
-                    case IDIGNORE:
-                        break;
-                    
-                }
-            case OPEN_FILE:
-                open_file(hWnd);
-                break;
+            case ONE:
+            set_input_text("1",curr);
+            //std::cout<<curr<<std::endl;
+            break;
+            case TWO:
+            set_input_text("2",curr);
+             //std::cout<<curr<<std::endl;
+            break;
+            case THREE:
+            set_input_text("3",curr);
+             //std::cout<<curr<<std::endl;
+            break;
+            case FOUR:
+            set_input_text("4",curr);
+            break;
+            case FIVE:
+            set_input_text("5",curr);
+            break;
+            case SIX:
+            set_input_text("6",curr);
+            break;
+            case SEVEN:
+            set_input_text("7",curr);
+            break;
+            case EIGHT:
+            set_input_text("8",curr);
+            break;
+            case NINE:
+            set_input_text("9",curr);
+            break;
+            case ZERO:
+            set_input_text("0",curr);
+            break;
+            case PLUS_BTN:
+               
+            break;
+            case MINUS_BTN:
+                
+            break;
+            case MULTIPLY_BTN:
+               
 
-            case SAVE_FILE:
-                save_file(hWnd);
-                break;
-                }
-            strcpy(out,name);
-            strcat(out," is ");
-            strcat(out,age);
-            strcat(out," years old. ");
-            SetWindowTextA(hOut,out);
+            break;
+            case DIVIDE_BTN:
+                
+            break;
+            case ENTER_BTN:
+            break;
+            case PERIOD:
             break;
         }
         break;
