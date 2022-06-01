@@ -320,3 +320,8 @@ void write_file(char * path){
 
     fclose(file);
 }
+void set_input_text(char* a,char curr1[]){
+            GetWindowTextA(hInput,curr1,100);
+            strcat(curr1,a);
+            SetWindowTextA(hInput,curr1);
+}
